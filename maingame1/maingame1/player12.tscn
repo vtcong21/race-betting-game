@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://player12.gd" type="Script" id=1]
+[ext_resource path="res://ASSERTS/ships/shipBlue_damage1.png" type="Texture" id=2]
+[ext_resource path="res://ASSERTS/ships/shipBlue_damage2.png" type="Texture" id=3]
+[ext_resource path="res://ASSERTS/ships/shipBlue_manned.png" type="Texture" id=4]
+[ext_resource path="res://ASSERTS/ships/shipBlue.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "cheer",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "slowing",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "moving",
+"speed": 14.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 18, 20 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 46, 22 )
+
+[node name="player12" type="KinematicBody2D"]
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.633, 0.471 )
+frames = SubResource( 1 )
+animation = "moving"
+frame = 1
+speed_scale = 0.25
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="check2" type="Area2D" parent="."]
+position = Vector2( 20, 6 )
+collision_mask = 22
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="check2"]
+position = Vector2( -20, -4 )
+shape = SubResource( 3 )
+
+[node name="Timer_slow_2" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Timer_fast_2" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="check2" to="." method="_on_check2_body_entered"]
+[connection signal="body_exited" from="check2" to="." method="_on_check2_body_exited"]
+[connection signal="timeout" from="Timer_slow_2" to="." method="_on_Timer_slow_2_timeout"]
+[connection signal="timeout" from="Timer_fast_2" to="." method="_on_Timer_fast_2_timeout"]

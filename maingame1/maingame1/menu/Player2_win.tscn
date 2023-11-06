@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Player2_win.gd" type="Script" id=1]
+[ext_resource path="res://ASSERTS/PLAYER2/Poses/character_femaleAdventurer_cheer1.png" type="Texture" id=2]
+[ext_resource path="res://ASSERTS/PLAYER2/Poses/character_femaleAdventurer_wide.png" type="Texture" id=3]
+[ext_resource path="res://ASSERTS/PLAYER2/Poses/character_femaleAdventurer_cheer0.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 24.0
+height = 60.0
+
+[node name="Player2_win" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1, -4 )
+scale = Vector2( 1.08333, 1.08333 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 13 )
+shape = SubResource( 2 )

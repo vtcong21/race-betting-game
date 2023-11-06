@@ -1,0 +1,118 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://flappy-bird-tutorial-main/characters/player/Player.gd"
+} ]
+_global_script_class_icons={
+"Player": ""
+}
+
+[application]
+
+config/name="Login with Firebase"
+run/main_scene="res://Main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Firebase="*res://static/Firebase.gd"
+Global="*res://global.gd"
+Player1="*res://player1.gd"
+Player2="*res://player2.gd"
+Player3="*res://player3.gd"
+Player4="*res://player4.gd"
+Player5="*res://player5.gd"
+Player6="*res://player6.gd"
+Player7="*res://player7.gd"
+Player8="*res://player8.gd"
+Player9="*res://player9.gd"
+Player10="*res://player10.gd"
+Player11="*res://player11.gd"
+Player12="*res://player12.gd"
+Player13="*res://player13.gd"
+Player14="*res://player14.gd"
+Player15="*res://player15.gd"
+Player16="*res://player16.gd"
+Player17="*res://player17.gd"
+Player18="*res://player18.gd"
+Player19="*res://player19.gd"
+Player20="*res://player20.gd"
+Player21="*res://player21.gd"
+Player22="*res://player22.gd"
+Player23="*res://player23.gd"
+Player24="*res://player24.gd"
+Player25="*res://player25.gd"
+Checkwin="*res://checkwin.gd"
+Checkwin5="*res://checkwin5.gd"
+Checkwin4="*res://checkwin4.gd"
+Checkwin3="*res://checkwin3.gd"
+Checkwin2="*res://checkwin2.gd"
+AddSound="*res://menu/Add_sound.tscn"
+Login="*res://interface/login/Login.gd"
+
+[display]
+
+window/size/borderless=true
+window/size/test_width=1280
+window/size/test_height=720
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[input]
+
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+escape={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+flap={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}

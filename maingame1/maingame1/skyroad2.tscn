@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://player19.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ASSERTS/night_map.png" type="Texture" id=2]
+[ext_resource path="res://player20.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player18.tscn" type="PackedScene" id=4]
+[ext_resource path="res://player17.tscn" type="PackedScene" id=5]
+[ext_resource path="res://slow_spell_sky_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://player16.tscn" type="PackedScene" id=7]
+[ext_resource path="res://fast_spell_river_1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://backgroundsky2.gd" type="Script" id=9]
+[ext_resource path="res://goal3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://skyroad2.gd" type="Script" id=11]
+
+[node name="sky" type="Node2D"]
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 160.0, 267.0, 376.0, 489.0, 588.0, 775.0 ],
+"_edit_vertical_guides_": [ -1380.0, 2473.0 ]
+}
+
+[node name="player16" parent="." instance=ExtResource( 7 )]
+position = Vector2( 25, 129 )
+
+[node name="player17" parent="." instance=ExtResource( 5 )]
+position = Vector2( 24, 240 )
+scale = Vector2( 1, 1 )
+
+[node name="player18" parent="." instance=ExtResource( 4 )]
+position = Vector2( -241, 244 )
+scale = Vector2( 1, 1 )
+
+[node name="player19" parent="." instance=ExtResource( 1 )]
+position = Vector2( -183, 717 )
+scale = Vector2( 1, 1 )
+
+[node name="player20" parent="." instance=ExtResource( 3 )]
+position = Vector2( -251, 446 )
+scale = Vector2( 1, 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+script = ExtResource( 9 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2474, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1237, 283 )
+scale = Vector2( 1.29271, 0.706019 )
+texture = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="slow_spell_1" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( 1210, 563 )
+
+[node name="slow_spell_2" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( 1262, 333 )
+
+[node name="slow_spell_3" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( 1389, 463 )
+
+[node name="slow_spell_4" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( 1082, 239 )
+
+[node name="slow_spell_5" parent="Node2D" instance=ExtResource( 6 )]
+position = Vector2( 1364, 133 )
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="fast_spell_1" parent="Node2D2" instance=ExtResource( 8 )]
+position = Vector2( 1818, 569 )
+
+[node name="fast_spell_2" parent="Node2D2" instance=ExtResource( 8 )]
+position = Vector2( 2697, 466 )
+
+[node name="fast_spell_3" parent="Node2D2" instance=ExtResource( 8 )]
+position = Vector2( 2066, 359 )
+
+[node name="fast_spell_4" parent="Node2D2" instance=ExtResource( 8 )]
+position = Vector2( 2977, 246 )
+
+[node name="fast_spell_5" parent="Node2D2" instance=ExtResource( 8 )]
+position = Vector2( 1099, 144 )
+
+[node name="goal" parent="." instance=ExtResource( 10 )]

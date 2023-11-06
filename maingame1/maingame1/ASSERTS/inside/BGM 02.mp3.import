@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/BGM 02.mp3-fee4d4ae4707a014168bb4e4ff2b250f.mp3str"
+
+[deps]
+
+source_file="res://ASSERTS/inside/BGM 02.mp3"
+dest_files=[ "res://.import/BGM 02.mp3-fee4d4ae4707a014168bb4e4ff2b250f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

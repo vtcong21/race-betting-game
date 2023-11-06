@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://player25.tscn" type="PackedScene" id=1]
+[ext_resource path="res://slow_spell_river_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://goal5.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player23.tscn" type="PackedScene" id=4]
+[ext_resource path="res://player24.tscn" type="PackedScene" id=5]
+[ext_resource path="res://player21.tscn" type="PackedScene" id=6]
+[ext_resource path="res://player22.tscn" type="PackedScene" id=7]
+[ext_resource path="res://fast_spell_river_1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://backgroundriver.gd" type="Script" id=9]
+[ext_resource path="res://ASSERTS/map&obstacles/map_river.png" type="Texture" id=10]
+[ext_resource path="res://riverroad2.gd" type="Script" id=11]
+
+[node name="river" type="Node2D"]
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 160.0, 267.0, 376.0, 489.0, 588.0, 775.0 ],
+"_edit_vertical_guides_": [ -1380.0, 2473.0 ]
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+script = ExtResource( 9 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2474, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1246, 266 )
+scale = Vector2( 1.29271, 0.706019 )
+texture = ExtResource( 10 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="slow_spell_1" parent="Node2D" instance=ExtResource( 2 )]
+position = Vector2( 1886, 564 )
+
+[node name="slow_spell_2" parent="Node2D" instance=ExtResource( 2 )]
+position = Vector2( 1503, 458 )
+
+[node name="slow_spell_3" parent="Node2D" instance=ExtResource( 2 )]
+position = Vector2( 1127, 345 )
+
+[node name="slow_spell_4" parent="Node2D" instance=ExtResource( 2 )]
+position = Vector2( 1402, 243 )
+
+[node name="slow_spell_5" parent="Node2D" instance=ExtResource( 2 )]
+position = Vector2( 1189, 131 )
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="fast_spell_1" parent="Node2D2" instance=ExtResource( 8 )]
+position = Vector2( 1818, 569 )
+
+[node name="fast_spell_2" parent="Node2D2" instance=ExtResource( 8 )]
+position = Vector2( 4470, 466 )
+
+[node name="fast_spell_3" parent="Node2D2" instance=ExtResource( 8 )]
+position = Vector2( 2066, 359 )
+
+[node name="fast_spell_4" parent="Node2D2" instance=ExtResource( 8 )]
+position = Vector2( 2977, 246 )
+
+[node name="fast_spell_5" parent="Node2D2" instance=ExtResource( 8 )]
+position = Vector2( 1099, 144 )
+
+[node name="player21" parent="." instance=ExtResource( 6 )]
+position = Vector2( 45, 134 )
+
+[node name="player22" parent="." instance=ExtResource( 7 )]
+position = Vector2( 46, 242 )
+scale = Vector2( 1, 1 )
+
+[node name="player23" parent="." instance=ExtResource( 4 )]
+position = Vector2( -226, 242 )
+scale = Vector2( 1, 1 )
+
+[node name="player24" parent="." instance=ExtResource( 5 )]
+position = Vector2( -163, 726 )
+scale = Vector2( 1, 1 )
+
+[node name="player25" parent="." instance=ExtResource( 1 )]
+position = Vector2( -219, 458 )
+scale = Vector2( 1, 1 )
+
+[node name="goal" parent="." instance=ExtResource( 3 )]
+position = Vector2( 837, 35 )

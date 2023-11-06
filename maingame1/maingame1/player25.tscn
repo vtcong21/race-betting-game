@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://player25.gd" type="Script" id=1]
+[ext_resource path="res://ASSERTS/Alien sprites/alienYellow_walk2.png" type="Texture" id=2]
+[ext_resource path="res://ASSERTS/Alien sprites/alienYellow.png" type="Texture" id=3]
+[ext_resource path="res://ASSERTS/Alien sprites/alienYellow_swim1.png" type="Texture" id=4]
+[ext_resource path="res://ASSERTS/Alien sprites/alienYellow_swim2.png" type="Texture" id=5]
+[ext_resource path="res://ASSERTS/Alien sprites/alienYellow_walk1.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "cheer",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "moving",
+"speed": 14.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "slowing",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 12, 18 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 22, 19 )
+
+[node name="player25" type="KinematicBody2D"]
+position = Vector2( -74, 497 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 275, 104.75 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 4 )
+animation = "moving"
+frame = 1
+speed_scale = 0.5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 276, 108 )
+shape = SubResource( 6 )
+
+[node name="check5" type="Area2D" parent="."]
+collision_mask = 22
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="check5"]
+position = Vector2( 276, 107 )
+shape = SubResource( 5 )
+
+[node name="Timer_slow_5" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Timer_fast_5" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="check5" to="." method="_on_check5_body_entered"]
+[connection signal="body_exited" from="check5" to="." method="_on_check5_body_exited"]
+[connection signal="timeout" from="Timer_slow_5" to="." method="_on_Timer_slow_5_timeout"]
+[connection signal="timeout" from="Timer_fast_5" to="." method="_on_Timer_fast_5_timeout"]

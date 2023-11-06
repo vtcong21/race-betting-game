@@ -1,0 +1,409 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://ASSERTS/inside/bet_scene.png" type="Texture" id=1]
+[ext_resource path="res://menu/Bet_Scence_Map3.2.gd" type="Script" id=2]
+[ext_resource path="res://menu/AlienBeigeStand.gd" type="Script" id=3]
+[ext_resource path="res://menu/AlienPinkStand.gd" type="Script" id=4]
+[ext_resource path="res://menu/AlienYellowStand.gd" type="Script" id=5]
+[ext_resource path="res://menu/AlienBlueStand.gd" type="Script" id=6]
+[ext_resource path="res://menu/AlienGreenStand.gd" type="Script" id=7]
+[ext_resource path="res://ASSERTS/inside/confirmation_001.ogg" type="AudioStream" id=8]
+[ext_resource path="res://ASSERTS/inside/pixel.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://ASSERTS/inside/alienYellow_stand.png" type="Texture" id=10]
+[ext_resource path="res://ASSERTS/inside/alienGreen_stand.png" type="Texture" id=11]
+[ext_resource path="res://ASSERTS/inside/alienBlue_stand.png" type="Texture" id=12]
+[ext_resource path="res://ASSERTS/inside/alienPink_stand.png" type="Texture" id=13]
+[ext_resource path="res://ASSERTS/inside/alienBeige_stand.png" type="Texture" id=14]
+[ext_resource path="res://Dodge/art/button.png" type="Texture" id=15]
+[ext_resource path="res://ASSERTS/inside/icielBrandonText-Bold.ttf" type="DynamicFontData" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 17
+font_data = ExtResource( 16 )
+
+[node name="Bet_Map3" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BetScene" type="Sprite" parent="."]
+position = Vector2( 526.889, 299.75 )
+scale = Vector2( 0.556019, 0.556018 )
+texture = ExtResource( 1 )
+
+[node name="Start_Button" type="Button" parent="."]
+margin_left = 848.0
+margin_top = 521.0
+margin_right = 991.0
+margin_bottom = 588.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -3.0
+margin_top = 66.0
+margin_right = 127.0
+margin_bottom = 88.0
+custom_colors/font_color = Color( 0.560784, 0.372549, 0.294118, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "#####"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Character_1" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vingt" type="Button" parent="Character_1"]
+margin_left = 329.0
+margin_top = 119.0
+margin_right = 433.0
+margin_bottom = 166.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "20"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cinquante" type="Button" parent="Character_1"]
+margin_left = 445.0
+margin_top = 119.0
+margin_right = 549.0
+margin_bottom = 166.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "50"
+flat = true
+
+[node name="Cent" type="Button" parent="Character_1"]
+margin_left = 562.0
+margin_top = 119.0
+margin_right = 666.0
+margin_bottom = 166.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "100"
+flat = true
+
+[node name="Deux cent" type="Button" parent="Character_1"]
+margin_left = 679.0
+margin_top = 119.0
+margin_right = 783.0
+margin_bottom = 165.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "200"
+flat = true
+
+[node name="Character_2" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vingt2" type="Button" parent="Character_2"]
+margin_left = 329.0
+margin_top = 202.0
+margin_right = 433.0
+margin_bottom = 249.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "20"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cinquante2" type="Button" parent="Character_2"]
+margin_left = 445.0
+margin_top = 202.0
+margin_right = 549.0
+margin_bottom = 249.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "50"
+flat = true
+
+[node name="Cent2" type="Button" parent="Character_2"]
+margin_left = 562.0
+margin_top = 202.0
+margin_right = 666.0
+margin_bottom = 249.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "100"
+flat = true
+
+[node name="Deux cent2" type="Button" parent="Character_2"]
+margin_left = 679.0
+margin_top = 202.0
+margin_right = 783.0
+margin_bottom = 248.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "200"
+flat = true
+
+[node name="Character_3" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vingt3" type="Button" parent="Character_3"]
+margin_left = 329.0
+margin_top = 286.0
+margin_right = 433.0
+margin_bottom = 333.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "20"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cinquante3" type="Button" parent="Character_3"]
+margin_left = 445.0
+margin_top = 286.0
+margin_right = 549.0
+margin_bottom = 333.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "50"
+flat = true
+
+[node name="Cent3" type="Button" parent="Character_3"]
+margin_left = 562.0
+margin_top = 286.0
+margin_right = 666.0
+margin_bottom = 333.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "100"
+flat = true
+
+[node name="Deux cent3" type="Button" parent="Character_3"]
+margin_left = 679.0
+margin_top = 286.0
+margin_right = 783.0
+margin_bottom = 332.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "200"
+flat = true
+
+[node name="Character_4" type="Control" parent="."]
+margin_top = 56.0
+margin_right = 40.0
+margin_bottom = 96.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vingt4" type="Button" parent="Character_4"]
+margin_left = 329.0
+margin_top = 313.0
+margin_right = 433.0
+margin_bottom = 360.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "20"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cinquante4" type="Button" parent="Character_4"]
+margin_left = 445.0
+margin_top = 313.0
+margin_right = 549.0
+margin_bottom = 360.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "50"
+flat = true
+
+[node name="Cent4" type="Button" parent="Character_4"]
+margin_left = 562.0
+margin_top = 313.0
+margin_right = 666.0
+margin_bottom = 360.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "100"
+flat = true
+
+[node name="Deux cent4" type="Button" parent="Character_4"]
+margin_left = 679.0
+margin_top = 313.0
+margin_right = 783.0
+margin_bottom = 359.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "200"
+flat = true
+
+[node name="Character_5" type="Control" parent="."]
+margin_top = 95.0
+margin_right = 40.0
+margin_bottom = 135.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vingt5" type="Button" parent="Character_5"]
+margin_left = 329.0
+margin_top = 358.0
+margin_right = 433.0
+margin_bottom = 405.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "20"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cinquante5" type="Button" parent="Character_5"]
+margin_left = 445.0
+margin_top = 358.0
+margin_right = 549.0
+margin_bottom = 405.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "50"
+flat = true
+
+[node name="Cent5" type="Button" parent="Character_5"]
+margin_left = 562.0
+margin_top = 358.0
+margin_right = 666.0
+margin_bottom = 405.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "100"
+flat = true
+
+[node name="Deux cent5" type="Button" parent="Character_5"]
+margin_left = 679.0
+margin_top = 358.0
+margin_right = 783.0
+margin_bottom = 404.0
+custom_colors/font_color = Color( 0.054902, 0.454902, 0.278431, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "200"
+flat = true
+
+[node name="AlienBeigeStand" type="Sprite" parent="."]
+position = Vector2( 269, 127 )
+scale = Vector2( 0.848485, 0.848485 )
+texture = ExtResource( 14 )
+script = ExtResource( 3 )
+
+[node name="AlienBlueStand" type="Sprite" parent="."]
+position = Vector2( 227, 210 )
+scale = Vector2( 0.848485, 0.848485 )
+texture = ExtResource( 12 )
+script = ExtResource( 6 )
+
+[node name="AlienGreenStand" type="Sprite" parent="."]
+position = Vector2( 271, 296 )
+scale = Vector2( 0.848485, 0.848485 )
+texture = ExtResource( 11 )
+script = ExtResource( 7 )
+
+[node name="AlienPinkStand" type="Sprite" parent="."]
+position = Vector2( 224, 380 )
+scale = Vector2( 0.848485, 0.848485 )
+texture = ExtResource( 13 )
+script = ExtResource( 4 )
+
+[node name="AlienYellowStand" type="Sprite" parent="."]
+position = Vector2( 272, 463 )
+scale = Vector2( 0.848485, 0.848485 )
+texture = ExtResource( 10 )
+script = ExtResource( 5 )
+
+[node name="Button2" type="Sprite" parent="."]
+position = Vector2( 101, 553 )
+scale = Vector2( 0.11583, 0.105556 )
+texture = ExtResource( 15 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 30.0
+margin_top = 526.0
+margin_right = 174.0
+margin_bottom = 583.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 74.0
+margin_top = 29.0
+margin_right = 222.0
+margin_bottom = 54.0
+custom_colors/font_color = Color( 0.560784, 0.372549, 0.294118, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "###"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Start_Button" to="." method="_on_Start_Button_pressed"]
+[connection signal="pressed" from="Character_1/Vingt" to="." method="_on_Vingt_pressed"]
+[connection signal="pressed" from="Character_1/Cinquante" to="." method="_on_Cinquante_pressed"]
+[connection signal="pressed" from="Character_1/Cent" to="." method="_on_Cent_pressed"]
+[connection signal="pressed" from="Character_1/Deux cent" to="." method="_on_Deux_cent_pressed"]
+[connection signal="pressed" from="Character_2/Vingt2" to="." method="_on_Vingt2_pressed"]
+[connection signal="pressed" from="Character_2/Cinquante2" to="." method="_on_Cinquante2_pressed"]
+[connection signal="pressed" from="Character_2/Cent2" to="." method="_on_Cent2_pressed"]
+[connection signal="pressed" from="Character_2/Deux cent2" to="." method="_on_Deux_cent2_pressed"]
+[connection signal="pressed" from="Character_3/Vingt3" to="." method="_on_Vingt3_pressed"]
+[connection signal="pressed" from="Character_3/Cinquante3" to="." method="_on_Cinquante3_pressed"]
+[connection signal="pressed" from="Character_3/Cent3" to="." method="_on_Cent3_pressed"]
+[connection signal="pressed" from="Character_3/Deux cent3" to="." method="_on_Deux_cent3_pressed"]
+[connection signal="pressed" from="Character_4/Vingt4" to="." method="_on_Vingt4_pressed"]
+[connection signal="pressed" from="Character_4/Cinquante4" to="." method="_on_Cinquante4_pressed"]
+[connection signal="pressed" from="Character_4/Cent4" to="." method="_on_Cent4_pressed"]
+[connection signal="pressed" from="Character_4/Deux cent4" to="." method="_on_Deux_cent4_pressed"]
+[connection signal="pressed" from="Character_5/Vingt5" to="." method="_on_Vingt5_pressed"]
+[connection signal="pressed" from="Character_5/Cinquante5" to="." method="_on_Cinquante5_pressed"]
+[connection signal="pressed" from="Character_5/Cent5" to="." method="_on_Cent5_pressed"]
+[connection signal="pressed" from="Character_5/Deux cent5" to="." method="_on_Deux_cent5_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

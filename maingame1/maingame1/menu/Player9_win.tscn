@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ASSERTS/Alien sprites/alienPink_jump.png" type="Texture" id=1]
+[ext_resource path="res://ASSERTS/Alien sprites/alienPink_stand.png" type="Texture" id=2]
+[ext_resource path="res://menu/Player9_win.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "win",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 28.0
+height = 62.0
+
+[node name="Player9_win" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 4.76837e-07, 2 )
+scale = Vector2( 1.21212, 1.21212 )
+frames = SubResource( 1 )
+animation = "win"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )

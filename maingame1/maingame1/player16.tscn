@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ASSERTS/member/1_manned.png" type="Texture" id=2]
+[ext_resource path="res://ASSERTS/member/1_damage2.png" type="Texture" id=3]
+[ext_resource path="res://ASSERTS/member/1_damage1.png" type="Texture" id=4]
+[ext_resource path="res://player16.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "cheer",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "moving",
+"speed": 14.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "slowing",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 39, 134 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 124, 136 )
+
+[node name="player11" type="KinematicBody2D"]
+position = Vector2( 27, 37 )
+scale = Vector2( 0.25, 0.25 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 12, 12 )
+scale = Vector2( 0.263529, 0.264846 )
+frames = SubResource( 1 )
+animation = "idle"
+speed_scale = 0.1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3, 14 )
+shape = SubResource( 2 )
+
+[node name="check" type="Area2D" parent="."]
+collision_mask = 22
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="check"]
+position = Vector2( 8, 16 )
+shape = SubResource( 3 )
+
+[node name="Timer_slow_1" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Timer_fast_1" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="check" to="." method="_on_check_body_entered"]
+[connection signal="body_exited" from="check" to="." method="_on_check_body_exited"]
+[connection signal="timeout" from="Timer_slow_1" to="." method="_on_Timer_slow_1_timeout"]
+[connection signal="timeout" from="Timer_fast_1" to="." method="_on_Timer_fast_1_timeout"]

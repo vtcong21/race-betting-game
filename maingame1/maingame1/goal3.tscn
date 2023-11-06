@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ASSERTS/map&obstacles/flag_1.png" type="Texture" id=1]
+[ext_resource path="res://ASSERTS/map&obstacles/flag_2.png" type="Texture" id=2]
+[ext_resource path="res://checkwin3.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 11.5, 286 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 286.5 )
+
+[node name="goal" type="KinematicBody2D"]
+position = Vector2( 819, 30 )
+collision_layer = 4
+collision_mask = 4
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 34.9092, 473 )
+scale = Vector2( -0.100206, 0.156426 )
+frames = SubResource( 1 )
+speed_scale = 0.5
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 67.5, 274 )
+shape = SubResource( 2 )
+
+[node name="checkwin3" type="Area2D" parent="."]
+collision_layer = 4
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="checkwin3"]
+position = Vector2( 63, 274 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="checkwin3" to="checkwin3" method="_on_checkwin3_body_entered"]

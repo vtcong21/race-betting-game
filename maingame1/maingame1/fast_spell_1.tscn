@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ASSERTS/map&obstacles/obstacle 1.png" type="Texture" id=1]
+[ext_resource path="res://fast_spell_1.gd" type="Script" id=2]
+[ext_resource path="res://ASSERTS/map&obstacles/1.1.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "obstacle 2",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 13.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 3, 13.5 )
+
+[node name="fast_spell_1" type="KinematicBody2D"]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.037, 0.019 )
+frames = SubResource( 1 )
+animation = "obstacle 2"
+frame = 1
+speed_scale = 0.5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4, 3.5 )
+shape = SubResource( 2 )
+
+[node name="checker" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="checker"]
+position = Vector2( -10, 3.5 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="checker" to="." method="_on_checker_body_entered"]

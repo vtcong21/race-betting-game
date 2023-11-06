@@ -1,0 +1,230 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://audition/Sprites/ui/play_again_button/play_again1.png" type="Texture" id=1]
+[ext_resource path="res://audition/Sprites/ui/back_to_menu_button/back_to_menu2.png" type="Texture" id=2]
+[ext_resource path="res://audition/Sprites/ui/back_to_menu_button/back_to_menu1.png" type="Texture" id=3]
+[ext_resource path="res://audition/Sprites/ui/play_again_button/play_again2.png" type="Texture" id=4]
+[ext_resource path="res://audition/Fonts/heartbit2x.tres" type="DynamicFont" id=5]
+[ext_resource path="res://audition/Scripts/End.gd" type="Script" id=6]
+
+[node name="End" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="PlayAgain" type="TextureButton" parent="."]
+margin_left = 184.0
+margin_top = 428.0
+margin_right = 375.0
+margin_bottom = 511.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayAgain1" type="Sprite" parent="PlayAgain"]
+position = Vector2( 96, 40 )
+scale = Vector2( 2.07812, 2.875 )
+texture = ExtResource( 1 )
+
+[node name="BackToMenu" type="TextureButton" parent="."]
+margin_left = 587.0
+margin_top = 432.0
+margin_right = 813.0
+margin_bottom = 509.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackToMenu1" type="Sprite" parent="BackToMenu"]
+position = Vector2( 109, 41.75 )
+scale = Vector2( 2.50521, 2.73437 )
+texture = ExtResource( 3 )
+
+[node name="GradeLabel" type="Label" parent="."]
+margin_left = 84.0
+margin_top = 8.0
+margin_right = 148.0
+margin_bottom = 22.0
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "grade:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GradeNumber" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 8.0
+margin_right = 224.0
+margin_bottom = 22.0
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+custom_fonts/font = ExtResource( 5 )
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="."]
+margin_left = 84.0
+margin_top = 24.0
+margin_right = 148.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "final score: "
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreNumber" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 24.0
+margin_right = 224.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+custom_fonts/font = ExtResource( 5 )
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComboLabel" type="Label" parent="."]
+margin_left = 84.0
+margin_top = 40.0
+margin_right = 148.0
+margin_bottom = 54.0
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "max combo:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComboNumber" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 40.0
+margin_right = 224.0
+margin_bottom = 54.0
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+custom_fonts/font = ExtResource( 5 )
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GreatLabel" type="Label" parent="."]
+margin_left = 84.0
+margin_top = 56.0
+margin_right = 148.0
+margin_bottom = 70.0
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "great:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GreatNumber" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 56.0
+margin_right = 224.0
+margin_bottom = 70.0
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+custom_fonts/font = ExtResource( 5 )
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoodLabel" type="Label" parent="."]
+margin_left = 84.0
+margin_top = 72.0
+margin_right = 148.0
+margin_bottom = 86.0
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "good:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoodNumber" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 72.0
+margin_right = 224.0
+margin_bottom = 86.0
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+custom_fonts/font = ExtResource( 5 )
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OkayLabel" type="Label" parent="."]
+margin_left = 84.0
+margin_top = 88.0
+margin_right = 148.0
+margin_bottom = 102.0
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "okay:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OkayNumber" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 88.0
+margin_right = 224.0
+margin_bottom = 102.0
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+custom_fonts/font = ExtResource( 5 )
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MissedLabel" type="Label" parent="."]
+margin_left = 84.0
+margin_top = 104.0
+margin_right = 148.0
+margin_bottom = 118.0
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "missed:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MissedNumber" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 104.0
+margin_right = 224.0
+margin_bottom = 118.0
+custom_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+custom_fonts/font = ExtResource( 5 )
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="PlayAgain" to="." method="_on_PlayAgain_pressed"]
+[connection signal="pressed" from="BackToMenu" to="." method="_on_BackToMenu_pressed"]
